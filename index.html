@@ -93,13 +93,13 @@
   <div class="wrap">
     <p class="eyebrow reveal">Try the demo</p>
     <h2 class="reveal">Drop a sketch.<br><span class="muted">Watch it draft.</span></h2>
-    <p class="sub reveal">An interactive preview of the workflow. Runs entirely in your browser; nothing is uploaded.</p>
+    <p class="sub reveal">A beta of our vectorizer, running entirely in your browser — nothing is uploaded. It detects straight walls in a sketch and outputs a dimensioned drawing you can download as SVG, DXF or PNG.</p>
     <div class="demo reveal">
       <div class="demo-in">
         <label class="drop" id="drop" tabindex="0">
           <input type="file" id="file" accept="image/*" hidden>
           <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M24 32V12M15 21l9-9 9 9M10 34v4h28v-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <b>Drop a sketch image here</b><span>or click to choose a file (JPG, PNG)</span>
+          <b>Drop a sketch image here</b><span>or click to choose a file (JPG, PNG). Dark lines on plain paper work best.</span>
         </label>
         <p class="or">or pick a sample sketch</p>
         <div class="samples">
@@ -108,19 +108,25 @@
         </div>
       </div>
       <div class="stage" id="stage" aria-live="polite">
-        <span class="demo-label">Demo preview · sample output</span>
-        <div class="st-empty" id="stEmpty"><svg viewBox="0 0 120 80" width="120" aria-hidden="true"><rect x="10" y="10" width="100" height="60" rx="6" fill="none" stroke="#c7c7cc" stroke-width="2" stroke-dasharray="5 5"/></svg><p>Your drawing will appear here.</p></div>
+        <span class="demo-label">Beta · browser-based vectorization</span>
+        <div class="st-empty" id="stEmpty"><svg viewBox="0 0 120 80" width="120" aria-hidden="true"><rect x="10" y="10" width="100" height="60" rx="6" fill="none" stroke="#c7c7cc" stroke-width="2" stroke-dasharray="5 5"/></svg><p>Your vectorized drawing will appear here.</p></div>
+        <div class="st-err" id="stErr" hidden><p id="errMsg"></p></div>
         <div class="cmp" id="cmp" hidden>
-          <div class="cmp-after"><svg viewBox="0 0 600 420" aria-label="Sample AI-drafted floor plan"><defs><pattern id="dg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1f2a3a" stroke-width=".6"/></pattern></defs><rect width="600" height="420" fill="#0b111a"/><rect width="600" height="420" fill="url(#dg)"/><g fill="none" stroke="#e8f1ff"><rect x="60" y="60" width="480" height="300" stroke-width="7"/><path d="M290 60v90M60 200h230M340 200h200M380 200v160M220 250v110" stroke-width="4"/><path d="M290 150a50 50 0 0 1 50 50" stroke-width="1.2" stroke-dasharray="3 3"/><path d="M220 250a30 30 0 0 1 30 -30" stroke-width="1.2"/><rect x="400" y="80" width="120" height="34" stroke-width="1.2"/><rect x="90" y="90" width="110" height="60" rx="4" stroke-width="1.2"/><rect x="80" y="270" width="100" height="70" stroke-width="1.2"/><rect x="260" y="270" width="80" height="70" stroke-width="1.2"/><rect x="470" y="300" width="50" height="45" rx="18" stroke-width="1.2"/><circle cx="420" cy="250" r="12" stroke-width="1.2"/><path d="M60 38h480M60 32v12M290 32v12M540 32v12M565 60v300M559 60h12M559 360h12" stroke="#6ea8ff" stroke-width="1.2"/></g><g fill="#6ea8ff" font-family="-apple-system,Helvetica,Arial" font-size="12" text-anchor="middle"><text x="175" y="28">5,200</text><text x="415" y="28">5,800</text><text x="582" y="214" transform="rotate(90 582 214)">7,500</text></g><g fill="#e8f1ff" font-family="-apple-system,Helvetica,Arial" font-size="12" letter-spacing="1.5" text-anchor="middle"><text x="175" y="180">LIVING 22.4 m²</text><text x="440" y="160">KITCHEN 15.1 m²</text><text x="140" y="240">BED 1 13.2 m²</text><text x="300" y="240">BED 2 9.8 m²</text><text x="460" y="230">BATH 6.0 m²</text></g><text x="540" y="400" text-anchor="end" fill="#7d8ba0" font-family="-apple-system,Helvetica,Arial" font-size="11" letter-spacing="2">SAMPLE OUTPUT · 1:100</text></svg></div>
+          <div class="cmp-after" id="after"></div>
           <div class="cmp-before" id="before"><img id="beforeImg" alt="Your sketch"></div>
           <div class="cmp-handle" id="handle" aria-hidden="true"><span></span></div>
-          <input type="range" id="slider" min="0" max="100" value="50" aria-label="Compare sketch and drafted plan">
-          <span class="cmp-tag l">Sketch</span><span class="cmp-tag r">AI draft</span>
+          <input type="range" id="slider" min="0" max="100" value="50" aria-label="Compare sketch and vectorized drawing">
+          <span class="cmp-tag l">Sketch</span><span class="cmp-tag r">Vector CAD</span>
         </div>
         <div class="proc" id="proc" hidden>
-          <img id="procImg" alt="Uploaded sketch preview">
+          <img id="procImg" alt="Sketch being processed">
           <div class="scan"></div>
-          <ol class="steps-ai" id="stepsAi"><li>Reading sketch</li><li>Detecting walls &amp; openings</li><li>Applying dimensions</li><li>Generating CAD layers</li></ol>
+          <ol class="steps-ai" id="stepsAi"><li>Loading &amp; downscaling</li><li>Grayscale &amp; adaptive threshold</li><li>Detecting line segments</li><li>Orthogonal snap &amp; merge</li><li>Rendering CAD drawing</li></ol>
+        </div>
+        <div class="tools" id="tools" hidden>
+          <p class="stat" id="stat"></p>
+          <label class="wfield">Overall width <input id="widthM" type="number" min="1" max="500" step="0.1" value="12" inputmode="decimal"> m</label>
+          <div class="exp"><button type="button" class="btn btn-sm" id="dlSvg">SVG</button><button type="button" class="btn btn-sm" id="dlDxf">DXF</button><button type="button" class="btn btn-sm" id="dlPng">PNG</button></div>
         </div>
         <button type="button" class="btn btn-o reset" id="reset" hidden>Try another sketch</button>
       </div>
