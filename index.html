@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D3DDD AI Draft — From sketch to CAD, in minutes</title>
+<meta name="description" content="D3DDD AI Draft turns sketches and briefs into CAD drafts, floor plans, marble shop drawings, elevations and 3D views. By D3DDD, Dubai 3D Design & Draft.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath d='M8 23V9h6l10 14V9' stroke='%23fff' stroke-width='2.4' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="gnav">
+  <div class="wrap gnav-in">
+    <a class="brand" href="#top" aria-label="D3DDD AI Draft home"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M8 23V9h6l10 14V9" stroke="#fff" stroke-width="2.4" fill="none"/></svg><span>D3DDD <b>AI Draft</b></span></a>
+    <nav class="snav" aria-label="Sections">
+      <a href="#how">How it works</a><a href="#features">Features</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="#waitlist">Join waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap center">
+    <p class="eyebrow reveal">Introducing D3DDD AI Draft</p>
+    <h1 class="reveal">Sketch it.<br><span class="grad">Draft it. Done.</span></h1>
+    <p class="lead reveal">AI that turns a napkin sketch or a written brief into clean, dimensioned CAD drawings — floor plans, marble shop drawings, elevations and 3D views.</p>
+    <div class="ctas reveal"><a class="btn" href="#waitlist">Join the early-access waitlist</a><a class="link" href="#how">See how it works ›</a></div>
+  </div>
+  <div class="hero-visual reveal" aria-hidden="true">
+    <svg viewBox="0 0 1200 560" class="hero-svg">
+      <defs>
+        <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1f2a3a" stroke-width=".6"/></pattern>
+        <pattern id="G" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="#2b3a50" stroke-width="1"/></pattern>
+        <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#0b111a"/><stop offset=".5" stop-color="#0b111a" stop-opacity="0"/></linearGradient>
+      </defs>
+      <rect width="1200" height="560" fill="#0b111a"/><rect width="1200" height="560" fill="url(#g)"/><rect width="1200" height="560" fill="url(#G)"/>
+      <!-- sketch side -->
+      <g fill="none" stroke="#9fb3c8" stroke-width="2.2" stroke-linecap="round" opacity=".75" class="sketch">
+        <path d="M92 118c80-4 220 3 330 0M95 120c-3 90 4 230 0 330M422 116c4 110-2 220 2 336M93 452c110 2 220-3 330 2"/>
+        <path d="M250 120c2 60-3 90 0 150M96 272c50 3 100-2 152 0M300 272c40-2 80 3 122-1M250 330c3 40-2 80 0 122"/>
+        <path d="M150 200c20-30 50-30 60 0M320 380c30 10 50 30 60 50"/>
+        <text x="130" y="210" fill="#9fb3c8" stroke="none" font-family="Bradley Hand,Segoe Print,cursive" font-size="20">living</text>
+        <text x="300" y="200" fill="#9fb3c8" stroke="none" font-family="Bradley Hand,Segoe Print,cursive" font-size="20">kitchen</text>
+        <text x="130" y="380" fill="#9fb3c8" stroke="none" font-family="Bradley Hand,Segoe Print,cursive" font-size="20">bed 1</text>
+        <text x="300" y="420" fill="#9fb3c8" stroke="none" font-family="Bradley Hand,Segoe Print,cursive" font-size="20">bath</text>
+      </g>
+      <!-- arrow -->
+      <g class="beam"><path d="M480 285h200" stroke="#fff" stroke-width="2" stroke-dasharray="6 8"/><path d="M672 275l14 10-14 10" fill="none" stroke="#fff" stroke-width="2"/><text x="580" y="265" text-anchor="middle" fill="#cfe3ff" font-family="-apple-system,Helvetica,Arial" font-size="15" letter-spacing="3">AI DRAFT</text></g>
+      <!-- CAD side -->
+      <g fill="none" stroke="#e8f1ff" class="cad">
+        <rect x="740" y="110" width="380" height="340" stroke-width="7"/>
+        <path d="M900 110v130M740 240h160M960 240h160M900 300v150M900 330h0" stroke-width="4"/>
+        <path d="M900 240h20M940 240h20" stroke-width="4"/>
+        <path d="M920 240a40 40 0 0 1 40-40" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <path d="M740 380h60M820 380h80" stroke-width="4"/>
+        <path d="M800 380a20 20 0 0 1 20-20" stroke-width="1.2"/>
+        <rect x="960" y="300" width="160" height="150" stroke-width="1.5"/>
+        <rect x="1060" y="380" width="50" height="60" rx="20" stroke-width="1.2"/>
+        <circle cx="1000" cy="340" r="14" stroke-width="1.2"/>
+        <rect x="950" y="125" width="150" height="40" stroke-width="1.2"/>
+        <rect x="770" y="140" width="100" height="60" rx="4" stroke-width="1.2"/>
+        <path d="M740 85h380M740 78v14M1120 78v14M900 78v14" stroke="#6ea8ff" stroke-width="1.2"/>
+        <path d="M1150 110v340M1143 110h14M1143 450h14" stroke="#6ea8ff" stroke-width="1.2"/>
+      </g>
+      <g fill="#6ea8ff" font-family="-apple-system,Helvetica,Arial" font-size="12">
+        <text x="820" y="76" text-anchor="middle">4,800</text><text x="1010" y="76" text-anchor="middle">6,200</text>
+        <text x="1168" y="285" transform="rotate(90 1168 285)" text-anchor="middle">10,500</text>
+      </g>
+      <g fill="#e8f1ff" font-family="-apple-system,Helvetica,Arial" font-size="12" letter-spacing="1.5">
+        <text x="820" y="230" text-anchor="middle">LIVING  24.6 m²</text><text x="1040" y="220" text-anchor="middle">KITCHEN  18.2 m²</text>
+        <text x="820" y="320" text-anchor="middle">BED 1  16.8 m²</text><text x="1040" y="292" text-anchor="middle">BATH 6.4 m²</text>
+      </g>
+      <rect width="1200" height="560" fill="url(#fade)" opacity=".35"/>
+    </svg>
+  </div>
+</section>
+
+<section id="how" class="sec light">
+  <div class="wrap">
+    <p class="eyebrow reveal">How it works</p>
+    <h2 class="reveal">From idea to drawing set<br>in three steps.</h2>
+    <ol class="steps">
+      <li class="card reveal"><span class="num">01</span><svg viewBox="0 0 200 120" aria-hidden="true"><path d="M30 30c45-3 95 2 140-1M32 31c-2 25 2 45-1 62M170 29c3 22-1 44 2 64M31 93c45 2 95-2 141 0M100 30c2 20-2 40 1 63" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg><h3>Upload a sketch or brief</h3><p>Photo of a hand sketch, a PDF, or just words: “3-bed villa, open kitchen, 220 m².”</p></li>
+      <li class="card reveal"><span class="num">02</span><svg viewBox="0 0 200 120" aria-hidden="true"><circle cx="100" cy="60" r="34" fill="none" stroke="#111" stroke-width="2"/><circle cx="100" cy="60" r="14" fill="#111"/><path d="M100 14v12M100 94v12M54 60h12M134 60h12M68 28l8 8M124 84l8 8M132 28l-8 8M76 84l-8 8" stroke="#111" stroke-width="2"/></svg><h3>AI interprets &amp; drafts</h3><p>Walls, openings, dimensions, layers and annotations generated to drafting standards.</p></li>
+      <li class="card reveal"><span class="num">03</span><svg viewBox="0 0 200 120" aria-hidden="true"><rect x="30" y="22" width="140" height="76" fill="none" stroke="#111" stroke-width="4"/><path d="M100 22v40M30 62h70M130 62h40M30 12h140" stroke="#111" stroke-width="2"/><path d="M30 8v8M170 8v8" stroke="#111" stroke-width="1.5"/></svg><h3>Review &amp; export</h3><p>Refine with plain-language edits, then export DWG, DXF, PDF or PNG for your team.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="features" class="sec dark">
+  <div class="wrap">
+    <p class="eyebrow reveal">Features</p>
+    <h2 class="reveal">Every drawing you need.<br><span class="muted">One assistant.</span></h2>
+  </div>
+  <div class="wrap feats">
+    <article class="feat reveal">
+      <div class="fv"><svg viewBox="0 0 400 260" aria-hidden="true"><rect x="40" y="30" width="320" height="200" fill="none" stroke="#fff" stroke-width="6"/><path d="M180 30v90M40 120h140M220 120h140M260 120v110M180 160v70" stroke="#fff" stroke-width="3"/><path d="M180 120h40" stroke="#fff" stroke-width="3" stroke-dasharray="1 0"/><path d="M180 120a40 40 0 0 1 40 -40" fill="none" stroke="#888" stroke-dasharray="3 3"/><path d="M40 16h320" stroke="#6ea8ff"/><text x="200" y="12" fill="#6ea8ff" font-size="11" text-anchor="middle" font-family="Helvetica">12,000</text></svg></div>
+      <h3>Floor plans</h3><p>Dimensioned layouts with room areas, door swings, wall types and furniture — layered and ready for CAD.</p>
+    </article>
+    <article class="feat reveal">
+      <div class="fv"><svg viewBox="0 0 400 260" aria-hidden="true"><defs><pattern id="mb" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 40c20-10 30 10 60-5M10 0c5 20 25 30 20 60" fill="none" stroke="#777" stroke-width=".8"/></pattern></defs><g stroke="#fff" stroke-width="1.5"><rect x="50" y="40" width="100" height="100" fill="url(#mb)"/><rect x="150" y="40" width="100" height="100" fill="url(#mb)"/><rect x="250" y="40" width="100" height="100" fill="url(#mb)"/><rect x="50" y="140" width="150" height="80" fill="url(#mb)"/><rect x="200" y="140" width="150" height="80" fill="url(#mb)"/></g><g fill="#6ea8ff" font-family="Helvetica" font-size="11"><text x="100" y="94" text-anchor="middle">M-01</text><text x="200" y="94" text-anchor="middle">M-02</text><text x="300" y="94" text-anchor="middle">M-03</text><text x="125" y="184" text-anchor="middle">M-04</text><text x="275" y="184" text-anchor="middle">M-05</text></g></svg></div>
+      <h3>Marble shop drawings</h3><p>Slab layouts, cut lists, piece numbering, vein matching and edge profiles for fabricators.</p>
+    </article>
+    <article class="feat reveal">
+      <div class="fv"><svg viewBox="0 0 400 260" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><path d="M40 220h320"/><rect x="70" y="80" width="260" height="140"/><path d="M60 80l140-50 140 50"/><rect x="100" y="110" width="50" height="40"/><rect x="250" y="110" width="50" height="40"/><rect x="175" y="150" width="50" height="70"/></g><g stroke="#6ea8ff"><path d="M350 220V30M344 220h12M344 80h12M344 30h12"/></g><text x="356" y="150" fill="#6ea8ff" font-size="10" font-family="Helvetica">+3.60</text><text x="356" y="60" fill="#6ea8ff" font-size="10" font-family="Helvetica">+6.10</text></svg></div>
+      <h3>Elevations &amp; sections</h3><p>Front, side and section views with levels, materials and openings — coordinated with your plan.</p>
+    </article>
+    <article class="feat reveal">
+      <div class="fv"><svg viewBox="0 0 400 260" aria-hidden="true" class="spin3d"><g fill="none" stroke="#fff" stroke-width="1.6"><path d="M200 40l130 60-130 60-130-60z"/><path d="M70 100v90l130 60 130-60v-90"/><path d="M200 160v90"/><path d="M200 40v-0M135 70l130 60M265 70l-130 60" stroke="#666"/><path d="M110 118v60M290 118v60M160 140v70M240 140v70" stroke="#888"/></g></svg></div>
+      <h3>3D views</h3><p>Instant wireframe and massing views from your 2D drawings to check proportions and present ideas.</p>
+    </article>
+  </div>
+</section>
+
+<section id="gallery" class="sec light">
+  <div class="wrap">
+    <p class="eyebrow reveal">Sample outputs</p>
+    <h2 class="reveal">Drawn by AI.<br><span class="muted">Checked by you.</span></h2>
+    <p class="sub reveal">Illustrative samples of the drawing types D3DDD AI Draft is designed to produce.</p>
+  </div>
+  <div class="gallery wrap">
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#f5f5f7"/><g fill="none" stroke="#111"><rect x="30" y="30" width="240" height="160" stroke-width="5"/><path d="M130 30v70M30 100h100M170 100h100M200 100v90" stroke-width="3"/><circle cx="235" cy="145" r="12"/><rect x="45" y="45" width="60" height="40" rx="3"/></g></svg><figcaption>Apartment floor plan · 1:100</figcaption></figure>
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#111"/><g fill="none" stroke="#eee" stroke-width="1.4"><path d="M40 190h220M60 190V80l90-45 90 45v110"/><rect x="90" y="110" width="40" height="35"/><rect x="170" y="110" width="40" height="35"/><rect x="132" y="140" width="36" height="50"/></g></svg><figcaption>Villa front elevation</figcaption></figure>
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#ece9e4"/><g stroke="#555" stroke-width="1"><rect x="40" y="40" width="70" height="70" fill="#f7f5f1"/><rect x="110" y="40" width="70" height="70" fill="#f2efe9"/><rect x="180" y="40" width="80" height="70" fill="#f7f5f1"/><rect x="40" y="110" width="110" height="70" fill="#f2efe9"/><rect x="150" y="110" width="110" height="70" fill="#f7f5f1"/></g><path d="M40 70c40-10 80 20 140 0s60 10 80 5M60 130c40 20 100-10 200 20" fill="none" stroke="#a9a49b"/></svg><figcaption>Marble floor shop drawing</figcaption></figure>
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#0b111a"/><g fill="none" stroke="#9cc4ff" stroke-width="1.2"><path d="M150 40l90 40-90 40-90-40z"/><path d="M60 80v70l90 40 90-40V80M150 120v70"/><path d="M105 60l90 40M195 60l-90 40" opacity=".5"/></g></svg><figcaption>3D massing wireframe</figcaption></figure>
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#fff"/><g fill="none" stroke="#111" stroke-width="1.4"><path d="M40 170h220M60 170V60h180v110M60 110h180"/><path d="M60 60l-10-10h200l-10 10" /><path d="M120 60v110M180 60v110" stroke-dasharray="4 3"/></g><g fill="#0071e3" font-size="9" font-family="Helvetica"><text x="250" y="114">FFL +3.20</text><text x="250" y="64">+6.40</text></g></svg><figcaption>Building section A–A</figcaption></figure>
+    <figure class="gi reveal"><svg viewBox="0 0 300 220" aria-hidden="true"><rect width="300" height="220" fill="#f5f5f7"/><g fill="none" stroke="#111" stroke-width="1.4"><rect x="50" y="60" width="200" height="40"/><rect x="50" y="100" width="200" height="60" fill="#e6e3dd"/><path d="M50 160c0 12 10 20 20 20h160c10 0 20-8 20-20"/></g><text x="150" y="45" font-size="10" text-anchor="middle" font-family="Helvetica" fill="#0071e3">COUNTERTOP DETAIL · 1:10</text></svg><figcaption>Vanity counter detail</figcaption></figure>
+  </div>
+</section>
+
+<section id="pricing" class="sec gray">
+  <div class="wrap">
+    <p class="eyebrow reveal">Pricing</p>
+    <h2 class="reveal">Simple plans.<br><span class="muted">Early-access rates.</span></h2>
+    <p class="sub reveal"><span class="tag">Placeholder pricing</span> Prices below are indicative early-access figures and may change before launch.</p>
+    <div class="plans">
+      <div class="plan reveal"><h3>Starter</h3><p class="price">$29<span>/mo</span></p><p class="pd">For freelancers and students.</p><ul><li>30 AI drafts / month</li><li>Floor plans &amp; elevations</li><li>PDF &amp; PNG export</li><li>Email support</li></ul><a class="btn btn-o" href="#waitlist" data-plan="Starter">Join waitlist</a></div>
+      <div class="plan hot reveal"><span class="badge">Most popular</span><h3>Studio</h3><p class="price">$99<span>/mo</span></p><p class="pd">For architects, interior and fit-out firms.</p><ul><li>200 AI drafts / month</li><li>All drawing types incl. marble shop drawings</li><li>DWG / DXF export</li><li>3D views</li><li>Priority support</li></ul><a class="btn" href="#waitlist" data-plan="Studio">Join waitlist</a></div>
+      <div class="plan reveal"><h3>Enterprise</h3><p class="price">Custom</p><p class="pd">For contractors and fabricators at scale.</p><ul><li>Unlimited drafts</li><li>Custom drafting standards &amp; title blocks</li><li>Team seats &amp; SSO</li><li>Human drafter review by D3DDD</li></ul><a class="btn btn-o" href="#waitlist" data-plan="Enterprise">Contact us</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="sec light">
+  <div class="wrap narrow">
+    <p class="eyebrow reveal">FAQ</p>
+    <h2 class="reveal">Questions, answered.</h2>
+    <div class="faq">
+      <details class="reveal"><summary>What can I upload?</summary><p>Hand sketches (photos or scans), PDFs, reference images, or a written brief. The more dimensions and notes you include, the more accurate the draft.</p></details>
+      <details class="reveal"><summary>Which file formats can I export?</summary><p>DWG, DXF, PDF and PNG are planned at launch, with layered output so drawings drop straight into your CAD workflow.</p></details>
+      <details class="reveal"><summary>Are the drawings ready for construction?</summary><p>AI drafts are a fast, accurate starting point. Drawings for permits or construction should always be reviewed by a qualified professional. Enterprise plans can include review by D3DDD drafters.</p></details>
+      <details class="reveal"><summary>Do you support marble and stone shop drawings?</summary><p>Yes — slab layouts, piece numbering, cut lists and edge details are a core focus, built on D3DDD’s experience with fit-out and stone fabrication projects.</p></details>
+      <details class="reveal"><summary>Is my project data private?</summary><p>Your uploads and drawings belong to you. Project files are kept private to your account and are not shared with other customers.</p></details>
+      <details class="reveal"><summary>When does early access open?</summary><p>We’re onboarding early-access users in waves. Join the waitlist and we’ll email you when your spot is ready.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist" class="sec dark">
+  <div class="wrap narrow center">
+    <p class="eyebrow reveal">Early access</p>
+    <h2 class="reveal">Be first to draft<br>with AI.</h2>
+    <p class="sub reveal">Tell us about your work. Submitting opens your email app with a message to <a href="mailto:info@d3ddd.com">info@d3ddd.com</a>.</p>
+    <form id="wl" class="form reveal" novalidate>
+      <div class="row"><label>Name<input name="name" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label></div>
+      <div class="row"><label>Company<input name="company" autocomplete="organization"></label><label>Interested plan<select name="plan"><option>Studio</option><option>Starter</option><option>Enterprise</option><option>Not sure yet</option></select></label></div>
+      <label>What would you like to draft?<textarea name="message" rows="4" placeholder="e.g. Marble shop drawings for a villa lobby"></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit">Join the waitlist</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><b>D3DDD AI Draft</b> by <a href="https://d3ddd.com" rel="noopener">D3DDD</a> — Dubai 3D Design &amp; Draft.</p>
+    <p><a href="mailto:info@d3ddd.com">info@d3ddd.com</a> · Pricing shown is placeholder early-access pricing. Samples are illustrative.</p>
+    <p class="muted">© <span id="yr">2026</span> D3DDD. All rights reserved.</p>
+  </div>
+</footer>
+<script src="main.js" defer></script>
+</body>
+</html>
