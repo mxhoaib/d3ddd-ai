@@ -14,7 +14,7 @@
   <div class="wrap gnav-in">
     <a class="brand" href="#top" aria-label="D3DDD AI Draft home"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M8 23V9h6l10 14V9" stroke="#fff" stroke-width="2.4" fill="none"/></svg><span>D3DDD <b>AI Draft</b></span></a>
     <nav class="snav" aria-label="Sections">
-      <a href="#how">How it works</a><a href="#features">Features</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      <a href="#how">How it works</a><a href="#demo">Demo</a><a href="#features">Features</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#investors">Investors</a>
     </nav>
     <a class="btn btn-sm" href="#waitlist">Join waitlist</a>
   </div>
@@ -89,6 +89,45 @@
   </div>
 </section>
 
+<section id="demo" class="sec gray">
+  <div class="wrap">
+    <p class="eyebrow reveal">Try the demo</p>
+    <h2 class="reveal">Drop a sketch.<br><span class="muted">Watch it draft.</span></h2>
+    <p class="sub reveal">An interactive preview of the workflow. Runs entirely in your browser; nothing is uploaded.</p>
+    <div class="demo reveal">
+      <div class="demo-in">
+        <label class="drop" id="drop" tabindex="0">
+          <input type="file" id="file" accept="image/*" hidden>
+          <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><path d="M24 32V12M15 21l9-9 9 9M10 34v4h28v-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <b>Drop a sketch image here</b><span>or click to choose a file (JPG, PNG)</span>
+        </label>
+        <p class="or">or pick a sample sketch</p>
+        <div class="samples">
+          <button type="button" class="samp" data-src="samples/sketch-villa.svg"><img src="samples/sketch-villa.svg" alt="Hand sketch of a two-bedroom villa"><span>Villa</span></button>
+          <button type="button" class="samp" data-src="samples/sketch-studio.svg"><img src="samples/sketch-studio.svg" alt="Hand sketch of a studio apartment"><span>Studio</span></button>
+        </div>
+      </div>
+      <div class="stage" id="stage" aria-live="polite">
+        <span class="demo-label">Demo preview · sample output</span>
+        <div class="st-empty" id="stEmpty"><svg viewBox="0 0 120 80" width="120" aria-hidden="true"><rect x="10" y="10" width="100" height="60" rx="6" fill="none" stroke="#c7c7cc" stroke-width="2" stroke-dasharray="5 5"/></svg><p>Your drawing will appear here.</p></div>
+        <div class="cmp" id="cmp" hidden>
+          <div class="cmp-after"><svg viewBox="0 0 600 420" aria-label="Sample AI-drafted floor plan"><defs><pattern id="dg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1f2a3a" stroke-width=".6"/></pattern></defs><rect width="600" height="420" fill="#0b111a"/><rect width="600" height="420" fill="url(#dg)"/><g fill="none" stroke="#e8f1ff"><rect x="60" y="60" width="480" height="300" stroke-width="7"/><path d="M290 60v90M60 200h230M340 200h200M380 200v160M220 250v110" stroke-width="4"/><path d="M290 150a50 50 0 0 1 50 50" stroke-width="1.2" stroke-dasharray="3 3"/><path d="M220 250a30 30 0 0 1 30 -30" stroke-width="1.2"/><rect x="400" y="80" width="120" height="34" stroke-width="1.2"/><rect x="90" y="90" width="110" height="60" rx="4" stroke-width="1.2"/><rect x="80" y="270" width="100" height="70" stroke-width="1.2"/><rect x="260" y="270" width="80" height="70" stroke-width="1.2"/><rect x="470" y="300" width="50" height="45" rx="18" stroke-width="1.2"/><circle cx="420" cy="250" r="12" stroke-width="1.2"/><path d="M60 38h480M60 32v12M290 32v12M540 32v12M565 60v300M559 60h12M559 360h12" stroke="#6ea8ff" stroke-width="1.2"/></g><g fill="#6ea8ff" font-family="-apple-system,Helvetica,Arial" font-size="12" text-anchor="middle"><text x="175" y="28">5,200</text><text x="415" y="28">5,800</text><text x="582" y="214" transform="rotate(90 582 214)">7,500</text></g><g fill="#e8f1ff" font-family="-apple-system,Helvetica,Arial" font-size="12" letter-spacing="1.5" text-anchor="middle"><text x="175" y="180">LIVING 22.4 m²</text><text x="440" y="160">KITCHEN 15.1 m²</text><text x="140" y="240">BED 1 13.2 m²</text><text x="300" y="240">BED 2 9.8 m²</text><text x="460" y="230">BATH 6.0 m²</text></g><text x="540" y="400" text-anchor="end" fill="#7d8ba0" font-family="-apple-system,Helvetica,Arial" font-size="11" letter-spacing="2">SAMPLE OUTPUT · 1:100</text></svg></div>
+          <div class="cmp-before" id="before"><img id="beforeImg" alt="Your sketch"></div>
+          <div class="cmp-handle" id="handle" aria-hidden="true"><span></span></div>
+          <input type="range" id="slider" min="0" max="100" value="50" aria-label="Compare sketch and drafted plan">
+          <span class="cmp-tag l">Sketch</span><span class="cmp-tag r">AI draft</span>
+        </div>
+        <div class="proc" id="proc" hidden>
+          <img id="procImg" alt="Uploaded sketch preview">
+          <div class="scan"></div>
+          <ol class="steps-ai" id="stepsAi"><li>Reading sketch</li><li>Detecting walls &amp; openings</li><li>Applying dimensions</li><li>Generating CAD layers</li></ol>
+        </div>
+        <button type="button" class="btn btn-o reset" id="reset" hidden>Try another sketch</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="features" class="sec dark">
   <div class="wrap">
     <p class="eyebrow reveal">Features</p>
@@ -132,9 +171,9 @@
 
 <section id="pricing" class="sec gray">
   <div class="wrap">
-    <p class="eyebrow reveal">Pricing</p>
+    <p class="eyebrow reveal">Early-access pricing</p>
     <h2 class="reveal">Simple plans.<br><span class="muted">Early-access rates.</span></h2>
-    <p class="sub reveal"><span class="tag">Placeholder pricing</span> Prices below are indicative early-access figures and may change before launch.</p>
+    <p class="sub reveal"><span class="tag">Early-access pricing</span> Indicative rates for early-access members; final pricing may change at launch.</p>
     <div class="plans">
       <div class="plan reveal"><h3>Starter</h3><p class="price">$29<span>/mo</span></p><p class="pd">For freelancers and students.</p><ul><li>30 AI drafts / month</li><li>Floor plans &amp; elevations</li><li>PDF &amp; PNG export</li><li>Email support</li></ul><a class="btn btn-o" href="#waitlist" data-plan="Starter">Join waitlist</a></div>
       <div class="plan hot reveal"><span class="badge">Most popular</span><h3>Studio</h3><p class="price">$99<span>/mo</span></p><p class="pd">For architects, interior and fit-out firms.</p><ul><li>200 AI drafts / month</li><li>All drawing types incl. marble shop drawings</li><li>DWG / DXF export</li><li>3D views</li><li>Priority support</li></ul><a class="btn" href="#waitlist" data-plan="Studio">Join waitlist</a></div>
@@ -158,6 +197,19 @@
   </div>
 </section>
 
+<section id="investors" class="sec gray inv">
+  <div class="wrap">
+    <p class="eyebrow reveal">Investors</p>
+    <h2 class="reveal">Drafting is the bottleneck.<br><span class="muted">We’re removing it.</span></h2>
+    <div class="inv-grid">
+      <div class="ic reveal"><h3>Vision</h3><p>Every building, interior and stone installation starts as a drawing. We believe the hours between an idea and a buildable drawing set should become minutes — with AI doing the drafting and professionals doing the deciding.</p></div>
+      <div class="ic reveal"><h3>Market opportunity</h3><p>Architects, interior designers, fit-out contractors and stone fabricators all depend on drafting capacity that is skilled, scarce and slow to scale. Specialised work like marble shop drawings is underserved by general-purpose CAD tools — a clear opening for a focused AI product.</p></div>
+      <div class="ic reveal"><h3>Team</h3><p>Built by D3DDD — Dubai 3D Design &amp; Draft — a drafting and 3D design studio with hands-on experience producing floor plans, elevations, 3D visuals and shop drawings for real projects. We know the work because we do the work.</p></div>
+    </div>
+    <div class="inv-cta reveal"><p>Interested in partnering or investing?</p><a class="btn" href="mailto:info@d3ddd.com?subject=D3DDD%20AI%20Draft%20%E2%80%94%20Investor%20enquiry">Contact info@d3ddd.com</a></div>
+  </div>
+</section>
+
 <section id="waitlist" class="sec dark">
   <div class="wrap narrow center">
     <p class="eyebrow reveal">Early access</p>
@@ -177,7 +229,7 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <p><b>D3DDD AI Draft</b> by <a href="https://d3ddd.com" rel="noopener">D3DDD</a> — Dubai 3D Design &amp; Draft.</p>
-    <p><a href="mailto:info@d3ddd.com">info@d3ddd.com</a> · Pricing shown is placeholder early-access pricing. Samples are illustrative.</p>
+    <p><a href="mailto:info@d3ddd.com">info@d3ddd.com</a> · Pricing shown is early-access pricing and may change. Samples are illustrative.</p>
     <p class="muted">© <span id="yr">2026</span> D3DDD. All rights reserved.</p>
   </div>
 </footer>
